@@ -1,0 +1,40 @@
+.navbar {
+  width: 100%;
+  background-color: $color-black;
+  display: inline-flex;
+  padding: 0 20rem;
+  font-weight: 200;
+  color: white;
+  &__logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__logo-img {
+    display: inline-block;
+    height: 4rem;
+    fill: white;
+  }
+  &__logo-text {
+    font-weight: 200;
+  }
+  &__menu {
+    margin-left: auto;
+  }
+  &__button {
+    display: inline-flex;
+  }
+  &__link {
+    padding: 1.5rem;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+    &:link, &:visited {
+      color: white;
+      text-decoration: none;
+    }
+    &:hover {
+      background-color: lighten($color-black, 20%);
+    }
+  }
+}
