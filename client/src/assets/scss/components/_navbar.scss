@@ -11,7 +11,7 @@
     align-items: center;
   }
   &__logo-img {
-    display: inline-block;
+    display: inline-flex;
     height: 4rem;
     fill: white;
   }
@@ -20,21 +20,67 @@
   }
   &__menu {
     margin-left: auto;
+    height: 100%;
   }
   &__button {
     display: inline-flex;
+    background-color: transparent;
+    border: none;
+    height: 100%;
   }
   &__link {
-    padding: 1.5rem;
     height: 100%;
     width: 100%;
+    padding: 1.5rem;
     transition: all 0.2s;
+    font-size: 1.6rem;
+    font-weight: 200;
     &:link, &:visited {
       color: white;
       text-decoration: none;
     }
     &:hover {
       background-color: lighten($color-black, 20%);
+    }
+  }
+  &__dropdown {
+    display: inline-flex;
+    position: relative;
+    height: 100%;
+    &:hover .navbar__dropdown-content {
+      display: block;
+    }
+    &-button {
+      padding: 1.5rem;
+      background-color: transparent;
+      color: white;
+      text-align: left;
+      border: none;
+      font-size: 1.6rem;
+      font-weight: 200;
+      &:hover {
+        background-color: lighten($color-black, 20%);
+      }
+    }
+    &-content {
+      display: none;
+      position: absolute;
+      width: 100%;
+      top: 100%;
+    }
+    &-link {
+      padding: 1.5rem;
+      width: 100%; 
+      background-color: lighten($color-black, 20%);
+      &:link, &:visited {
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-weight: 200; 
+      }
+      &:hover {
+        
+      }
     }
   }
 }

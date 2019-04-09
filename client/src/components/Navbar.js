@@ -8,17 +8,19 @@ const NavBar = () => {
   const renderAuthStatus = () => {
     if (!user) {
       return (
-        <li className="navbar__button">
+        <button className="navbar__button">
           <a href="/" className="navbar__link" onClick={login}>Log In</a>
-        </li>
+        </button>
       )
     } else {
       return (
-        <div style={{display: 'inline-flex'}}>
-          <li className="navbar__button">
-            <a href="/" className="navbar__link" onClick={logout}>Log Out</a>
-          </li>
-        </div>
+        <li className="navbar__dropdown">
+          <button className="navbar__dropdown-button">{`Hi ${user.name.first}`}</button>
+          <div className="navbar__dropdown-content">
+            <a href="/" className="navbar__dropdown-link" onClick={logout}>Log Out</a>
+            <a href="/" className="navbar__dropdown-link">Account</a>
+          </div>
+        </li>
       )
     }
   }
@@ -43,15 +45,12 @@ const NavBar = () => {
         <h1 className="navbar__logo-text">placeholder-title</h1>
       </div>
       <ul className="navbar__menu">
-        <li className="navbar__button">
+        <button className="navbar__button">
           <a href="/" className="navbar__link">Home</a>
-        </li>
-        <li className="navbar__button">
+        </button>
+        <button className="navbar__button">
           <a href="/" className="navbar__link">About</a>
-        </li>
-        <li className="navbar__button">
-          <a href="/" className="navbar__link">{user ? `Hi ${user.name.first}` : 'Test'}</a>
-        </li>
+        </button>
         {renderAuthStatus()}
       </ul>
     </div>
