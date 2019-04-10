@@ -16,7 +16,7 @@ const NavBar = () => {
     } else {
       return (
         <li className="navbar__dropdown">
-          <Link className="navbar__dropdown-button">{`Hi ${user.name.first}`}</Link>
+          <Link className="navbar__dropdown-button">{`Hi ${user.name.first.charAt(0).toUpperCase() + user.name.first.substring(1)}`}</Link>
           <li className="navbar__dropdown-content">
             <Link href="/" className="navbar__dropdown-link" onClick={logout}>Log Out</Link>
             <Link href="/" className="navbar__dropdown-link">Account</Link>

@@ -1,3 +1,21 @@
+@media (max-width: 84rem) {
+  .navbar {
+    padding: 0 1rem!important;
+  }
+}
+
+@media (max-width: 54.5rem) {
+  .navbar {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__menu {
+      margin: 0 !important;
+    }
+  }
+}
+
 .navbar {
   width: 100%;
   background-color: $color-black;
@@ -14,6 +32,7 @@
     display: inline-flex;
     height: 4rem;
     fill: white;
+    margin-right: 1rem;
   }
   &__logo-text {
     font-weight: 200;
