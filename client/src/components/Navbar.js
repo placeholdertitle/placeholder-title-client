@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import getUser from '../controllers/userService';
 
 const NavBar = () => {
@@ -9,16 +10,16 @@ const NavBar = () => {
     if (!user) {
       return (
         <li className="navbar__button">
-          <a href="/" className="navbar__link" onClick={login}>Log In</a>
+          <Link to="/" className="navbar__link" onClick={login}>Log In</Link>
         </li>
       )
     } else {
       return (
         <li className="navbar__dropdown">
-          <a className="navbar__dropdown-button">{`Hi ${user.name.first}`}</a>
+          <Link className="navbar__dropdown-button">{`Hi ${user.name.first}`}</Link>
           <li className="navbar__dropdown-content">
-            <a href="/" className="navbar__dropdown-link" onClick={logout}>Log Out</a>
-            <a href="/" className="navbar__dropdown-link">Account</a>
+            <Link href="/" className="navbar__dropdown-link" onClick={logout}>Log Out</Link>
+            <Link href="/" className="navbar__dropdown-link">Account</Link>
           </li>
         </li>
       )
@@ -46,10 +47,10 @@ const NavBar = () => {
       </div>
       <ul className="navbar__menu">
         <li className="navbar__button">
-          <a href="/" className="navbar__link">Home</a>
+          <Link href="/" className="navbar__link">Home</Link>
         </li>
         <li className="navbar__button">
-          <a href="/" className="navbar__link">About</a>
+          <Link href="/" className="navbar__link">About</Link>
         </li>
         {renderAuthStatus()}
       </ul>

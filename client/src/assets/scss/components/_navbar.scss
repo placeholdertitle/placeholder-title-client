@@ -62,8 +62,12 @@
       border: none;
       font-size: 1.6rem;
       font-weight: 200;
+      width: 100%;
       &:hover {
         background-color: lighten($color-black, 20%);
+      }
+      &:link, &:active {
+        text-decoration: none;
       }
     }
     &-content {
