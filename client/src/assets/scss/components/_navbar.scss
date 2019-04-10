@@ -47,8 +47,12 @@
     display: inline-flex;
     position: relative;
     height: 100%;
-    &:hover .navbar__dropdown-content {
+    min-width: 8.5rem;
+    &:hover &-content {
       display: block;
+    }
+    &:hover &-button {
+      background-color: lighten($color-black, 20%);
     }
     &-button {
       padding: 1.5rem;
@@ -71,7 +75,7 @@
     &-link {
       padding: 1.5rem;
       width: 100%; 
-      background-color: lighten($color-black, 20%);
+      background-color: $color-black;
       &:link, &:visited {
         display: block;
         color: white;
@@ -79,7 +83,7 @@
         font-weight: 200; 
       }
       &:hover {
-        
+        background-color:  lighten($color-black, 20%);
       }
     }
   }

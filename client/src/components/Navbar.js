@@ -8,18 +8,18 @@ const NavBar = () => {
   const renderAuthStatus = () => {
     if (!user) {
       return (
-        <button className="navbar__button">
+        <li className="navbar__button">
           <a href="/" className="navbar__link" onClick={login}>Log In</a>
-        </button>
+        </li>
       )
     } else {
       return (
         <li className="navbar__dropdown">
-          <button className="navbar__dropdown-button">{`Hi ${user.name.first}`}</button>
-          <div className="navbar__dropdown-content">
+          <a className="navbar__dropdown-button">{`Hi ${user.name.first}`}</a>
+          <li className="navbar__dropdown-content">
             <a href="/" className="navbar__dropdown-link" onClick={logout}>Log Out</a>
             <a href="/" className="navbar__dropdown-link">Account</a>
-          </div>
+          </li>
         </li>
       )
     }
@@ -45,12 +45,12 @@ const NavBar = () => {
         <h1 className="navbar__logo-text">placeholder-title</h1>
       </div>
       <ul className="navbar__menu">
-        <button className="navbar__button">
+        <li className="navbar__button">
           <a href="/" className="navbar__link">Home</a>
-        </button>
-        <button className="navbar__button">
+        </li>
+        <li className="navbar__button">
           <a href="/" className="navbar__link">About</a>
-        </button>
+        </li>
         {renderAuthStatus()}
       </ul>
     </div>
