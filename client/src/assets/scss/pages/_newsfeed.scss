@@ -19,7 +19,7 @@
     overflow: visible !important;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 435px) {
   .newsfeed__container {
     padding: 11rem 0.2rem 0rem 0.2rem !important;
   }
@@ -28,6 +28,11 @@
   }
   .profile__card {
     min-width: 30rem !important;
+  }
+  .social-card__title {
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
   }
 }
 
