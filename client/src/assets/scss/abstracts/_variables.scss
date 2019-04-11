@@ -1,13 +1,17 @@
 // Colors
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
+$color-primary: #0f519c;
+$color-primary-light: lighten($color-primary, 10%);
+$color-primary-dark: darken($color-primary, 10%);
 
-$color-secondary-light: #ffb900;
-$color-secondary-dark: #ff7730;
+$color-secondary: #f7f6f6;
+$color-secondary-light: lighten($color-secondary, 10%);
+$color-secondary-dark: darken($color-secondary, 10%);
 
-$color-tertiary-light: #2998ff;
+$color-tertiary-light: #5bc7f1;
 $color-tertiary-dark: #5643fa;
+
+$color-valid: #55c57a;
+$color-invalid: #ffb900;
 
 $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;

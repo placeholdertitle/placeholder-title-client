@@ -1,0 +1,27 @@
+.newsfeed {
+  &__container {
+    padding: 10rem 20rem;
+    width: 100%;
+    display: inline-flex;
+  }
+  &__feed {
+    height: calc(100vh - 15rem);
+    overflow: auto;
+    margin: 1rem;
+    flex: 1;
+  }
+  &__content {
+    height: 18rem;
+    width: 100%;
+    border: 1px solid green;
+    border-radius: $default-border-radius;
+    background-color: $color-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+}

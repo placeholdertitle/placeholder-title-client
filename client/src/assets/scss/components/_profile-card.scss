@@ -1,0 +1,131 @@
+.profile {
+  &__card {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    // flex: 1;
+    margin: 1rem;
+    min-width: 40rem;
+    background-color: $color-secondary;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+    border-radius: $default-border-radius;
+    overflow: hidden;
+    padding-bottom: 4rem;
+  }
+  &__avatar {
+    width: 100%;
+    height: 15rem;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #b9b9b9;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+    margin-bottom: 6rem;
+  }
+  &__avatar-img {
+    position: absolute;
+    top: 15rem;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    border-radius: 50%;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+  }
+  &__display-name {
+    font-weight: 200;
+    text-transform: capitalize;
+  }
+  &__bio {
+    margin-bottom: 1rem;
+  }
+  &__info {
+    width: 80%;
+    &-list {
+      list-style: none;
+      text-align: left;
+    }
+  }
+  &__info-description {
+    margin-left: 1rem;
+  }
+  &__info-point {
+    font-weight: 300;
+    list-style-position: inside;
+    position: relative;
+    &:before {
+      position: absolute;
+      left: -2rem;
+    }
+    &--location:before {
+      font-family: 'Font Awesome 5 Pro';
+      color: #b1b1b1;
+      font-weight: 900;
+      width: 2rem;
+      content: '\f80c';
+      display: inline-block;
+    }
+    &--occupation:before {
+      font-family: 'Font Awesome 5 Pro';
+      color: #b1b1b1;
+      font-weight: 900;
+      width: 2rem;
+      content: '\f0b1';
+      display: inline-block;
+    }
+    &--university:before {
+      font-family: 'Font Awesome 5 Pro';
+      color: #b1b1b1;
+      font-weight: 900;
+      width: 2rem;
+      content: '\f19d';
+      transform: translateX(-0.2rem);
+      display: inline-block;
+    }
+  }
+  &__location {
+    text-transform: capitalize;
+    font-weight: 500;
+  }
+  &__image-collection {
+    display: block;
+    margin: 2rem 0 4rem 0;
+    width: 32rem;
+    height: 15rem;
+    &-header {
+      font-weight: 200;
+      margin-bottom: 0.75rem;
+    }
+    &-row {
+      margin-top: 0.75rem;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    &-link {
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: $color-primary;
+      }
+      &:hover {
+        color: $color-primary-light;
+      }
+    }
+  }
+  &__image-grid {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-gap: 0.5rem;
+  }
+  &__image-instance {
+    height: 100%;
+    width: 100%;
+  }
+}

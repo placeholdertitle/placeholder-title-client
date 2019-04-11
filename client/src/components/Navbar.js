@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ user, logout, login }) => {
+const NavBar = ({ user, logout }) => {
   const renderAuthStatus = () => {
     if (!user) {
       return (
         <li className="navbar__button">
-          <Link to="/" className="navbar__link" onClick={login}>
+          <Link to="/login" className="navbar__link">
             Log In
           </Link>
         </li>
@@ -14,25 +14,18 @@ const NavBar = ({ user, logout, login }) => {
     } else {
       return (
         <li className="navbar__dropdown">
-          <Link to="/" className="navbar__dropdown-button">{`Hi ${user.name.first
-            .charAt(0)
-            .toUpperCase() + user.name.first.substring(1)}`}</Link>
-          <li className="navbar__dropdown-content">
+          <Link to="" className="navbar__dropdown-button">{`Hi ${user.name.first}`}</Link>
+          <ul className="navbar__dropdown-content">
             <Link to="/" className="navbar__dropdown-link" onClick={logout}>
               Log Out
             </Link>
             <Link to="/" className="navbar__dropdown-link">
               Account
             </Link>
-          </li>
+          </ul>
         </li>
       );
     }
-  };
-
-  const handleLogin = async e => {
-    e.preventDefault();
-    login();
   };
 
   const handleLogout = e => {
@@ -44,7 +37,7 @@ const NavBar = ({ user, logout, login }) => {
     <div className="navbar">
       <div className="navbar__logo">
         <svg
-          className="navbar__logo-img svg-inline--fa fa-rocket fa-w-16"
+          className="navbar__logo-img"
           aria-hidden="true"
           focusable="false"
           data-prefix="fal"

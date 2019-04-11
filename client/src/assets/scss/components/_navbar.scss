@@ -1,6 +1,6 @@
 @media (max-width: 84rem) {
   .navbar {
-    padding: 0 1rem!important;
+    padding: 0 1rem !important;
   }
 }
 
@@ -17,13 +17,17 @@
 }
 
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
   width: 100%;
-  background-color: $color-black;
+  background-color: $color-primary;
   display: inline-flex;
   padding: 0 20rem;
   font-weight: 200;
   color: white;
-  box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+  box-shadow: 0 1rem 3rem rgba($color-black, 0.4);
   &__logo {
     display: inline-flex;
     justify-content: center;
@@ -36,7 +40,7 @@
     margin-right: 1rem;
   }
   &__logo-text {
-    font-weight: 400;
+    font-weight: 200;
   }
   &__menu {
     margin-left: auto;
@@ -55,12 +59,13 @@
     transition: all 0.2s;
     font-size: 1.6rem;
     font-weight: 200;
-    &:link, &:visited {
+    &:link,
+    &:visited {
       color: white;
       text-decoration: none;
     }
     &:hover {
-      background-color: lighten($color-black, 20%);
+      background-color: $color-primary-light;
     }
   }
   &__dropdown {
@@ -72,7 +77,7 @@
       display: block;
     }
     &:hover &-button {
-      background-color: lighten($color-black, 20%);
+      background-color: $color-primary-light;
     }
     &-button {
       padding: 1.5rem;
@@ -83,10 +88,12 @@
       font-size: 1.6rem;
       font-weight: 200;
       width: 100%;
+      text-transform: capitalize;
       &:hover {
-        background-color: lighten($color-black, 20%);
+        background-color: $color-primary-light;
       }
-      &:link, &:active {
+      &:link,
+      &:active {
         text-decoration: none;
       }
     }
@@ -95,19 +102,21 @@
       position: absolute;
       width: 100%;
       top: 100%;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
     }
     &-link {
       padding: 1.5rem;
-      width: 100%; 
-      background-color: $color-black;
-      &:link, &:visited {
+      width: 100%;
+      background-color: $color-primary;
+      &:link,
+      &:visited {
         display: block;
         color: white;
         text-decoration: none;
-        font-weight: 200; 
+        font-weight: 200;
       }
       &:hover {
-        background-color:  lighten($color-black, 20%);
+        background-color: $color-primary-light;
       }
     }
   }
