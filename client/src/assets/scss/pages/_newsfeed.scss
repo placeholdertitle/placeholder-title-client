@@ -1,3 +1,45 @@
+@media (max-width: 1440px) {
+  .newsfeed__container {
+    padding: 7rem 10rem 0rem 10rem !important;
+  }
+}
+@media (max-width: 1024px) {
+  .newsfeed__container {
+    padding: 7rem 5rem 0rem 5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .newsfeed__container {
+    padding: 12rem 0.2rem 0rem 0.2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: auto !important;
+  }
+  .newsfeed__feed {
+    overflow: visible !important;
+  }
+}
+@media (max-width: 425px) {
+  .newsfeed__container {
+    padding: 11rem 0.2rem 0rem 0.2rem !important;
+  }
+  .newsfeed__content {
+    min-width: 30rem !important;
+  }
+  .profile__card {
+    min-width: 30rem !important;
+  }
+}
+
+@media (max-width: 325px) {
+  .profile__image-grid {
+    grid-template-columns: auto auto !important;
+    grid-template-rows: auto auto auto !important;
+  }
+  .profile__image-collection {
+    width: 25rem !important;
+  }
+}
 .newsfeed {
   &__container {
     padding: 7rem 20rem 0rem 20rem;
@@ -8,15 +50,12 @@
   }
   &__feed {
     height: 100%;
-    overflow: auto;
     margin: 1rem;
     flex: 1;
   }
-  &__sidebar {
-  }
   &__content {
-    height: 18rem;
     width: 100%;
+    min-width: 40rem;
     border: 1px solid green;
     border-radius: $default-border-radius;
     background-color: $color-secondary;
