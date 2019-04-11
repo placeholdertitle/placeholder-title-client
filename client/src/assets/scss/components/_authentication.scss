@@ -65,6 +65,15 @@
   }
 }
 
+@keyframes animateIn {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .auth {
   @include align-center;
   display: flex;
@@ -86,12 +95,14 @@
     align-items: center;
     height: 100%;
     position: relative;
+    overflow: hidden;
     background: linear-gradient(to bottom right, $color-primary, $color-primary-light);
     &-slogan {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-bottom: 3rem;
+      animation: animateIn 0.75s ease;
     }
     &-logo {
       height: 4.5rem;
