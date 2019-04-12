@@ -14,7 +14,7 @@ const NavBar = ({ user, logout }) => {
     } else {
       return (
         <li className="navbar__dropdown">
-          <Link to="" className="navbar__dropdown-button">{`Hi ${user.name.first}`}</Link>
+          <Link to="" className="navbar__dropdown-button">{`Hi ${user.first || 'User'}`}</Link>
           <ul className="navbar__dropdown-content">
             <Link to="/" className="navbar__dropdown-link" onClick={logout}>
               Log Out

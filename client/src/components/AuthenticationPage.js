@@ -4,12 +4,15 @@ import ErrorPage from './ErrorPage';
 
 const AuthencicationPage = props => {
   const { type } = props;
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const handleAuth = async e => {
     e.preventDefault();
     if (type === 'login') {
-      props.login();
+      props.login({ email, password });
     } else {
-      props.signup();
+      console.log('ran');
+      props.signup({ email, password });
     }
   };
   const renderRedirect = () => {
@@ -56,6 +59,8 @@ const AuthencicationPage = props => {
               className="auth__form-input"
               id="email"
               placeholder="Email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
               required
             />
             <label htmlFor="email" className="auth__form-label">
@@ -68,6 +73,8 @@ const AuthencicationPage = props => {
               className="auth__form-input"
               id="password"
               placeholder="Password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
               required
             />
             <label htmlFor="password" className="auth__form-label">

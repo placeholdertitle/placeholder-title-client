@@ -56,7 +56,11 @@
   &__feed {
     height: 100%;
     margin: 1rem;
+    overflow: auto;
     flex: 1;
+  }
+  &__sidebar {
+    overflow: auto;
   }
   &__content {
     width: 100%;

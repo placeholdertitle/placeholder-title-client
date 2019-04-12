@@ -1,8 +1,18 @@
 import axios from 'axios';
 
-const getUser = async () => {
-  const user = await axios.get('https://randomuser.me/api/?results=1');
-  return user.data.results[0];
+export default {
+  signup: async user => {
+    const response = await axios.post('http://localhost:8000/auth/signup', user);
+    return response.data;
+  },
+  login: async user => {
+    const response = await axios.post('http://localhost:8000/auth/login', user);
+    return response.data;
+  },
+  getUser: async token => {
+    const response = await axios.get('http://localhost:8000/api/user', {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    return response.data;
+  }
 };
-
-export default getUser;

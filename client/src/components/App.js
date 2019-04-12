@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Navbar from './Navbar';
 import AuthenticationPage from './AuthenticationPage';
-import getUser from '../controllers/userService';
+import controller from '../controllers/userService';
 import NewsFeed from './NewsFeed';
 import ErrorPage from './ErrorPage';
 
@@ -22,9 +22,14 @@ class App extends Component {
   logout = () => {
     this.setState({ user: false });
   };
-  login = async () => {
-    const user = await getUser();
-    this.setState({ user, redirect: true });
+  login = async body => {
+    const response = await controller.login(body);
+    const user = await controller.getUser(response.token);
+    this.setState({ user });
+  };
+  signup = async body => {
+    const signupResponse = await controller.signup(body);
+    console.log(signupResponse.data);
   };
 
   render() {
@@ -58,7 +63,7 @@ class App extends Component {
               component={() => (
                 <AuthenticationPage
                   type="signup"
-                  signup={this.login.bind(this)}
+                  signup={this.signup.bind(this)}
                   user={this.state.user}
                 />
               )}
