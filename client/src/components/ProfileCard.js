@@ -23,20 +23,16 @@ const ProfileCard = ({ user }) => {
       return <div>Loading...</div>;
     }
   };
-  if (user.name) {
+  if (user) {
+    console.log(user);
     return (
       <div className="profile__card">
         <div className="profile__avatar" />
-        <img src={user.picture.large} alt="" className="profile__avatar-img" />
+        <img src={user.avatar} alt="" className="profile__avatar-img" />
         <h1 className="profile__display-name">
-          {user.name.first} {user.name.last}{' '}
+          {user.first} {user.last}{' '}
         </h1>
-        <h4 className="profile__bio">
-          Coffee loving code monkey{' '}
-          <span role="img" aria-label="monkey">
-            🐒
-          </span>
-        </h4>
+        <h4 className="profile__bio">{user.bio}</h4>
         <div className="profile__info">
           <ul className="profile__info-list">
             <li className="profile__info-point profile__info-point--location">
@@ -54,7 +50,7 @@ const ProfileCard = ({ user }) => {
             </li>
             <li className="profile__info-point profile__info-point--university">
               <span className="profile__info-description">
-                Went to <span className="profile__location">Wentworth Institute of Technology</span>
+                Went to <span className="profile__location">{user.education}</span>
               </span>
             </li>
           </ul>
@@ -65,7 +61,7 @@ const ProfileCard = ({ user }) => {
           <div className="profile__image-collection-row">
             <Link
               className="profile__image-collection-link"
-              to={`/profile/${user.id.value}/photos`}
+              to={`/profile/${user._id.value}/photos`}
             >
               View More
             </Link>
