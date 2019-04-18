@@ -35,14 +35,15 @@ const ProfileCard = ({ user }) => {
         <h4 className="profile__bio">{user.bio}</h4>
         <div className="profile__info">
           <ul className="profile__info-list">
-            <li className="profile__info-point profile__info-point--location">
+            {user.location ? 
+              <li className="profile__info-point profile__info-point--location">
               <span className="profile__info-description">
                 Lives in{' '}
                 <span className="profile__location">
                   {user.location.city}, {user.location.state}
                 </span>
               </span>
-            </li>
+            </li> : ''}
             <li className="profile__info-point profile__info-point--occupation">
               <span className="profile__info-description">
                 Works at <span className="profile__location">Tech Startup</span>

@@ -5,6 +5,7 @@ import AuthenticationPage from './AuthenticationPage';
 import controller from '../controllers/userService';
 import NewsFeed from './NewsFeed';
 import ErrorPage from './ErrorPage';
+import TestPage from './TestPage';
 
 const PrivateRoute = ({ component: Component, auth, ...rest }) => (
   <Route
@@ -68,6 +69,7 @@ class App extends Component {
                 />
               )}
             />
+            <Route path="/test" component={TestPage} />
             <Route component={() => <ErrorPage code="404" />} />
           </Switch>
         </BrowserRouter>

@@ -1,24 +1,26 @@
 .social-card {
+  padding: 2rem 1.5rem;
   margin-top: 2rem;
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  background-color: $color-white;
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+  border-radius: $default-border-radius;
+  position: relative;
 }
 .social-card__avatar {
-  padding: 1rem 1.5rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.social-card__content {
-  padding: 1rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
+  padding-right: 1.5rem;
+}
+.social-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .social-card__title {
@@ -71,4 +73,9 @@
   font-family: 'proxima-nova';
   margin-left: 1rem;
   font-weight: 100;
+}
+.social-card__comments {
+  position: absolute;
+  top: 100%;
+  left: 0%;
 }

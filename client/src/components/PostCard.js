@@ -43,6 +43,11 @@ export default props => {
           <i className="fal fa-envelope" />
         </div>
       </div>
+      <div className="social-card__comments">
+        <ul>
+          <li>Test Comment</li>
+        </ul>
+      </div>
     </div>
   );
 };
